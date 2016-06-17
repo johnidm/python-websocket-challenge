@@ -29,7 +29,7 @@ Open the url [http://localhost:5000](http://localhost:5000) in many tabs and dif
 
 #### How to contribute  
 
-[Plase check the issues](https://github.com/johnidm/python-websocket-challenge/issues/)
+[Check the issues list](https://github.com/johnidm/python-websocket-challenge/issues/)
 
 #### How project work
 
