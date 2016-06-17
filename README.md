@@ -11,9 +11,14 @@ pyenv virutalenv 2.7.11 venv-2.7.11
 pyenv activate venv-2.7.11
 ```
 
+```
+git clone git@github.com:johnidm/python-websocket-challenge.git
+pip install -r requirements.txt
+```
+
 ##### Run project
 ```
-python -m unittest
+python app.py
 ````
 or 
 ```
