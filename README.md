@@ -2,7 +2,7 @@
 
 [![Deploy](http://www.herokucdn.com/deploy/button.png)](http://chat-room-interview.herokuapp.com/)
 
-> HTTPS does not work in this project
+> HTTPS does not work in this project - This [issue](https://github.com/johnidm/python-websocket-challenge/issues/4) will fix this problem
 
 #### Known issues
 
