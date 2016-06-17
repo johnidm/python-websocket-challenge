@@ -51,3 +51,4 @@ I did not do this project alone, I researched and used many things that articles
 * http://code.runnable.com/UqDMKY-VwoAMABDk/simple-websockets-chat-with-tornado-for-python
 * http://www.jpablo128.com/multi-room-websockets-server-with-tornado-i-basic-chat-server/
 * http://www.codecheese.com/2013/11/running-tornado-web-server-on-heroku/
+* https://github.com/jbalogh/tornado-websocket-client
