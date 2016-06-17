@@ -4,6 +4,10 @@
 
 > HTTPS does not work in this project
 
+#### Known issues
+
+> In Heroku we are having this problem https://github.com/johnidm/python-websocket-challenge/issues/2. To solve this problem you need to refresh the client connections
+
 #### Setup project
 ```
 pyenv install 2.7.11
