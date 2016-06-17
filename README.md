@@ -31,6 +31,12 @@ foreman start
 
 Open the url [http://localhost:5000](http://localhost:5000) in many tabs and different browsers and enjoy yourself!
 
+#### Run tests
+
+```
+python -m tornado.test.runtests app_test
+```
+
 #### How to contribute  
 
 [Check the issues list](https://github.com/johnidm/python-websocket-challenge/issues/)
