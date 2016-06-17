@@ -40,12 +40,14 @@ function updateScrollbar() {
 function insertMessage() {
     var message = $('.message-input').val();
 
+    var uuid = generateUUID();
+
     if ($.trim(message) == '') {
         return false;
     }
-    $('<div class="message message-personal">' + message + '</div>').appendTo($('.mCSB_container')).addClass('new');
+    $('<div class="message message-personal" uuid="' + uuid + '">' + message + '</div>').appendTo($('.mCSB_container')).addClass('new');
 
-    sendMessageWS(message);
+    sendMessageWS(message, uuid);
     updateScrollbar();
 
     $('.message-input').val(null);
@@ -62,15 +64,19 @@ $(window).on('keydown', function(e) {
     }
 })
 
-function sendMessageWS(message) {
+function sendMessageWS(message, uuid) {
     var chat = {
         avatar: avatar,
+        uuid, uuid,
         message: message
     }
     ws.socket.send(JSON.stringify(chat));
 }
 
 function writeMessage(message) {
+
+    var existing = $('.message-personal[uuid="' + message.uuid + '"]');
+    if (existing.length > 0) return;
 
     var avatar = message.avatar;
 
@@ -85,3 +91,13 @@ function writeMessage(message) {
     }, 1000 + (Math.random() * 20) * 100);
 
 }
+
+function generateUUID() {
+    var d = new Date().getTime();
+    var uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+        var r = (d + Math.random()*16)%16 | 0;
+        d = Math.floor(d/16);
+        return (c=='x' ? r : (r&0x3|0x8)).toString(16);
+    });
+    return uuid;
+};

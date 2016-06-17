@@ -35,14 +35,13 @@ class WebSocketChatRoomHandler(tornado.websocket.WebSocketHandler):
         chat = {
             "date": datetime.datetime.now().strftime("%Y-%m-%d %H:%M"),
             "message": body["message"],
+            "uuid": body["uuid"],
             "avatar": body["avatar"],
         }
 
         response = tornado.escape.json_encode(chat)
         for client in WebSocketChatRoomHandler.clients:
-            # Does not send message to self-client
-            if client != self:
-                client.write_message(response)
+            client.write_message(response)
 
 
 class Application(tornado.web.Application):
