@@ -1,15 +1,43 @@
 import os
+
 import tornado.ioloop
 import tornado.web
+import tornado.websocket
+
+import datetime
 
 
 class IndexHandler(tornado.web.RequestHandler):
     def get(self):
-        self.write('Hello world')
+        self.render('index.html')
+
+class ChatHandler(tornado.web.RequestHandler):
+    def get(self):
+        self.render('chat.html')
 
 
-class WebSocketChatHandler():
-    pass
+class WebSocketChatRoomHandler(tornado.websocket.WebSocketHandler):
+  
+    clients = set()
+
+    def open(self):
+        WebSocketChatRoomHandler.clients.add(self)
+
+    def on_close(self):
+        WebSocketChatRoomHandler.clients.remove(self)
+
+    def on_message(self, message):
+        body = tornado.escape.json_decode(message)
+
+        chat = {
+            "date": datetime.datetime.now().strftime("%Y-%m-%d %H:%M"),
+            "message": body["message"],
+            "user": body["user"],
+        }
+        
+        response = tornado.escape.json_encode(chat)
+        for client in WebSocketChatRoomHandler.clients:
+            client.write_message(response)
 
 
 class Application(tornado.web.Application):
@@ -17,7 +45,8 @@ class Application(tornado.web.Application):
     def __init__(self):
         handlers = [
             (r"/", IndexHandler),
-            (r"/chat", WebSocketChatHandler),
+            (r"/chat", ChatHandler),
+            (r"/chatroom", WebSocketChatRoomHandler),
         ]
         settings = dict(
             template_path=os.path.join(os.path.dirname(__file__), "templates"),
