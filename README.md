@@ -1,6 +1,6 @@
 # Websocket challange
 
-[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://chat-room-interview.herokuapp.com/)
+[![Deploy](http://www.herokucdn.com/deploy/button.png)](http://chat-room-interview.herokuapp.com/)
 
 > HTTPS does not work in this project
 
