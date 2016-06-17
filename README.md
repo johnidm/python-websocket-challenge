@@ -6,7 +6,7 @@
 
 #### Known issues
 
-> In Heroku we are having this problem https://github.com/johnidm/python-websocket-challenge/issues/2. To solve this problem you need to refresh the client connections
+> In Heroku we are having this problem https://github.com/johnidm/python-websocket-challenge/issues/2. To solve this problem you need to refresh the client connections. Our team is trying to solve this problem :-(
 
 #### Setup project
 ```
