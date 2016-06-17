@@ -6,6 +6,12 @@ var ws = {
         ws.socket.onmessage = function(event) {
             writeMessage(JSON.parse(event.data));
         };
+
+        // Solved this issue 
+        // https://github.com/johnidm/python-websocket-challenge/issues/2
+        ws.onclose = function(){   
+            setTimeout(function(){ ws.start() }, 1000);
+        };
     }
 };
 ws.start();
