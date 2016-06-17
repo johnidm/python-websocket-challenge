@@ -25,13 +25,16 @@ or
 foreman start
 ```
 
-Open the url http://localhost:5000 in many tabs and different browsers and enjoy yourself!
+Open the url [http://localhost:5000](http://localhost:5000) in many tabs and different browsers and enjoy yourself!
 
 
 #### References
 
-I did not do this project alone, I researched and used many things that articles
+I did not do this project alone, I researched and used many things that articles:
 
 * http://codepen.io/supah/pen/jqOBqp
-* https://github.com/tornadoweb/tornado/blob/master/demos/websocket/chatdemo.py
+* https://www.fullstackpython.com/websockets.html
+* https://github.com/tornadoweb/tornado/tree/master/demos/chat
+* http://code.runnable.com/UqDMKY-VwoAMABDk/simple-websockets-chat-with-tornado-for-python
+* http://www.jpablo128.com/multi-room-websockets-server-with-tornado-i-basic-chat-server/
 * http://www.codecheese.com/2013/11/running-tornado-web-server-on-heroku/
