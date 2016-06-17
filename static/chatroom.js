@@ -14,7 +14,7 @@ var fakeAvatars = [
   'images/baby.png', 'images/cris.png',
   'images/corner.jpg', 'images/super.png',
   'images/dog.png', 'images/john.png',
-  'images/mussun.png', 'images/sb.jpg'
+  'images/mussun.png'
 ]
 
 var avatar = fakeAvatars[Math.floor(Math.random() * fakeAvatars.length)];
