@@ -40,7 +40,8 @@ class WebSocketChatRoomHandler(tornado.websocket.WebSocketHandler):
 
         response = tornado.escape.json_encode(chat)
         for client in WebSocketChatRoomHandler.clients:
-            if client != self: # ignore self-message
+            # Does not send message to self-client
+            if client != self:
                 client.write_message(response)
 
 
@@ -55,9 +56,9 @@ class Application(tornado.web.Application):
             (r'/', IndexHandler),
             (r'/chat', ChatHandler),
             (r'/chatroom', WebSocketChatRoomHandler),
-            (r'/images/(.*)',tornado.web.StaticFileHandler, {'path': os.path.join(settings['static_path'], 'images')},),
+            (r'/images/(.*)', tornado.web.StaticFileHandler,
+                {'path': os.path.join(settings['static_path'], 'images')},),
         ]
-        
         super(Application, self).__init__(handlers, **settings)
 
 
