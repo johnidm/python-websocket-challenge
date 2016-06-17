@@ -2,6 +2,7 @@
 
 [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://chat-room-interview.herokuapp.com/)
 
+> HTTPS does not work in this project
 
 ##### Setup project
 ```
@@ -14,8 +15,12 @@ pyenv activate venv-2.7.11
 ```
 python -m unittest
 ````
+or 
+```
+foreman start
+```
 
-Open the url `http://localhost:5000` in many tabs and different browsers and enjoy yourself!
+Open the url http://localhost:5000 in many tabs and different browsers and enjoy yourself!
 
 
 #### References
