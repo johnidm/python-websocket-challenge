@@ -8,16 +8,19 @@ import datetime
 
 
 class IndexHandler(tornado.web.RequestHandler):
+
     def get(self):
         self.render('index.html')
 
+
 class ChatHandler(tornado.web.RequestHandler):
+
     def get(self):
-        self.render('chat.html')
+        self.render('chatroom.html')
 
 
 class WebSocketChatRoomHandler(tornado.websocket.WebSocketHandler):
-  
+
     clients = set()
 
     def open(self):
@@ -32,26 +35,29 @@ class WebSocketChatRoomHandler(tornado.websocket.WebSocketHandler):
         chat = {
             "date": datetime.datetime.now().strftime("%Y-%m-%d %H:%M"),
             "message": body["message"],
-            "user": body["user"],
+            "avatar": body["avatar"],
         }
-        
+
         response = tornado.escape.json_encode(chat)
         for client in WebSocketChatRoomHandler.clients:
-            client.write_message(response)
+            if client != self: # ignore self-message
+                client.write_message(response)
 
 
 class Application(tornado.web.Application):
-    
+
     def __init__(self):
-        handlers = [
-            (r"/", IndexHandler),
-            (r"/chat", ChatHandler),
-            (r"/chatroom", WebSocketChatRoomHandler),
-        ]
         settings = dict(
             template_path=os.path.join(os.path.dirname(__file__), "templates"),
             static_path=os.path.join(os.path.dirname(__file__), "static"),
         )
+        handlers = [
+            (r'/', IndexHandler),
+            (r'/chat', ChatHandler),
+            (r'/chatroom', WebSocketChatRoomHandler),
+            (r'/images/(.*)',tornado.web.StaticFileHandler, {'path': os.path.join(settings['static_path'], 'images')},),
+        ]
+        
         super(Application, self).__init__(handlers, **settings)
 
 
