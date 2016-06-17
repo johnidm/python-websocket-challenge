@@ -27,6 +27,7 @@ foreman start
 
 Open the url [http://localhost:5000](http://localhost:5000) in many tabs and different browsers and enjoy yourself!
 
+#### How project work
 
 #### References
 
