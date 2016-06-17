@@ -35,6 +35,8 @@ Open the url [http://localhost:5000](http://localhost:5000) in many tabs and dif
 
 [Check the issues list](https://github.com/johnidm/python-websocket-challenge/issues/)
 
+> We love well-written code, please before commit check pep8 - https://www.python.org/dev/peps/pep-0008/
+
 #### How project work
 
 [Please watch this video](http://i.imgur.com/jgsaINw.gifv)
