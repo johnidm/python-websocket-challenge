@@ -17,7 +17,7 @@ class TestHandlerHTTP(AsyncHTTPTestCase):
         self.assertIn('index.css', response.body)
 
     def test_chat_page(self):
-        response = self.fetch('/chat')
+        response = self.fetch('/chatroom')
         self.assertEqual(response.code, 200)
 
         self.assertIn('normalize.css', response.body)

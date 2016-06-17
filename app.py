@@ -53,8 +53,8 @@ class Application(tornado.web.Application):
         )
         handlers = [
             (r'/', IndexHandler),
-            (r'/chat', ChatHandler),
-            (r'/chatroom', WebSocketChatRoomHandler),
+            (r'/chatroom', ChatHandler),
+            (r'/chat', WebSocketChatRoomHandler),
             (r'/images/(.*)', tornado.web.StaticFileHandler,
                 {'path': os.path.join(settings['static_path'], 'images')},),
         ]

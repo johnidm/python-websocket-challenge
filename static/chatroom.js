@@ -1,7 +1,7 @@
 var ws = {
     socket: null,
     start: function() {
-        var url = "ws://" + location.host + "/chatroom";
+        var url = "ws://" + location.host + "/chat";
         ws.socket = new WebSocket(url);
         ws.socket.onmessage = function(event) {
             writeMessage(JSON.parse(event.data));
