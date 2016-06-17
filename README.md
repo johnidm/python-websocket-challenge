@@ -11,7 +11,7 @@
 #### Setup project
 ```
 pyenv install 2.7.11
-pyenv virutalenv 2.7.11 venv-2.7.11
+pyenv virtualenv 2.7.11 venv-2.7.11
 pyenv activate venv-2.7.11
 ```
 
