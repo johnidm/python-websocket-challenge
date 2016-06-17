@@ -1,7 +1,8 @@
 import tornado
+import app
+
 from tornado.testing import AsyncHTTPTestCase
 
-import app
 
 class TestHTTPHandler(AsyncHTTPTestCase):
 
@@ -33,17 +34,16 @@ class TestHTTPHandler(AsyncHTTPTestCase):
 
         message = {
             "message": "Hi,",
-            "uuid" : "8sdssodf8yhguUBJHBJUFODUS",
+            "uuid": "8sdssodf8yhguUBJHBJUFODUS",
             "avatar": "images/ko.png",
         }
-            
+
         ws_client.write_message(tornado.escape.json_encode(message))
-        
+
         response_body = yield ws_client.read_message()
         response_data = tornado.escape.json_decode(response_body)
-  
+
         self.assertEqual(response_data['message'], message['message'])
         self.assertEqual(response_data['uuid'], message['uuid'])
         self.assertEqual(response_data['avatar'], message['avatar'])
-        self.assertTrue(response_data.has_key('date'))
-        
+        self.assertTrue('date' in response_data)

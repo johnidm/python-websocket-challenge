@@ -31,7 +31,7 @@ class WebSocketChatRoomHandler(tornado.websocket.WebSocketHandler):
 
     def on_message(self, message):
         body = tornado.escape.json_decode(message)
-        
+
         chat = {
             "date": datetime.datetime.now().strftime("%Y-%m-%d %H:%M"),
             "message": body["message"],
