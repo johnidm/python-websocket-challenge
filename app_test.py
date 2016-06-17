@@ -14,7 +14,7 @@ class TestHTTPHandler(AsyncHTTPTestCase):
         self.assertEqual(response.code, 200)
 
         self.assertIn('Chat Room Interview', response.body)
-        self.assertIn('click any button to open chat room', response.body)
+        self.assertIn('click any button to open the chat room', response.body)
         self.assertIn('/chat', response.body)
         self.assertIn('index.css', response.body)
 
