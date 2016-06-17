@@ -29,7 +29,7 @@ Open the url [http://localhost:5000](http://localhost:5000) in many tabs and dif
 
 #### How project work
 
-![](http://g.recordit.co/MLSpAq03Ee.gif)
+![](http://i.imgur.com/60bts.gif)
 
 #### References
 
