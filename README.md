@@ -29,8 +29,7 @@ Open the url [http://localhost:5000](http://localhost:5000) in many tabs and dif
 
 #### How project work
 
-![](http://i.imgur.com/jgsaINw.gif)
-
+[Imgur](http://i.imgur.com/jgsaINw.gifv)
 
 #### References
 
