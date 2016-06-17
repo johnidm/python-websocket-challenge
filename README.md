@@ -29,6 +29,8 @@ Open the url [http://localhost:5000](http://localhost:5000) in many tabs and dif
 
 #### How project work
 
+![](http://g.recordit.co/MLSpAq03Ee.gif)
+
 #### References
 
 I did not do this project alone, I researched and used many things that articles:
