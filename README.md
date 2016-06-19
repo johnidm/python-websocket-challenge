@@ -20,7 +20,7 @@ git clone git@github.com:johnidm/python-websocket-challenge.git
 pip install -r requirements.txt
 ```
 
-or try :whale:  
+or try Docker(:whale:)  
 
 ```
 docker build --rm -t johnidm/python-websocket-challenge .
