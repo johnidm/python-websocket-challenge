@@ -20,6 +20,15 @@ git clone git@github.com:johnidm/python-websocket-challenge.git
 pip install -r requirements.txt
 ```
 
+or try :whale:  
+
+```
+docker build --rm -t johnidm/python-websocket-challenge .
+docker run -d -p 5000:5000 johnidm/python-websocket-challenge
+```
+
+Check Docker machine IP: `docker-machine ip default` 
+
 #### Run project
 ```
 python app.py
